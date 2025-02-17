@@ -7,7 +7,7 @@ from zabbix_api import ZabbixAPI
 import csv
 
 zapi = ZabbixAPI(server="http://127.0.0.1/zabbix")
-zapi.login("Admin", "!@nhaca123")
+zapi.login("user", "passwd")
 
 f = csv.reader(open('/tmp/hosts.csv'), delimiter=';')
 for [ip,macro,hostname] in f:
@@ -46,7 +46,7 @@ for [ip,macro,hostname] in f:
             },
             {
                 "macro": "{$SNMP_COMMUNITY}",
-                "value": "l1nkt3l"
+                "value": "community"
             }
         ]
     })
